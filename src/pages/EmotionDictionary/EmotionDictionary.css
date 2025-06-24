@@ -1,13 +1,14 @@
 .emotion-dictionary-page {
   min-height: 100vh;
-  padding: 20px;
-  text-align: center;
   background-image: url('../../assets/images/bg_3.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 .emotion-dictionary-page::before {
@@ -17,17 +18,130 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-.emotion-dictionary-page > * {
+.character-container {
   position: relative;
   z-index: 2;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 0 40px;
 }
 
-.emotion-dictionary-page h1 {
+.character-info {
+  flex: 1;
+  text-align: left;
+  padding-right: 40px;
+  max-width: 600px;
+}
+
+.character-category {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.character-title {
+  color: #FFD700;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  margin: 10px 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.character-greeting {
   color: white;
-  font-size: clamp(40px, 5vw, 60px);
-  margin-top: 120px;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+.character-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  font-weight: 400;
+}
+
+.hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hashtag {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.character-image-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.yellow-background {
+  position: absolute;
+  right: -30%;
+  width: 80%;
+  height: 200vh;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  transform: rotate(25deg);
+  z-index: 1;
+}
+
+.character-image {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .character-container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .character-info {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .character-image-section {
+    min-height: 300px;
+  }
+  
+  .character-image {
+    max-width: 250px;
+    max-height: 250px;
+  }
 }
